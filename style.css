@@ -1,0 +1,513 @@
+*{
+    border: 0;
+    margin: 0;
+    font-family: Open Sans;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.opening{
+    height: 10vh;
+    width: 10vw;
+    background-color: black;
+    z-index: 3;
+    visibility: none;
+    animation: move 1s alternate linear;
+}
+@keyframes move{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-100px);
+    }
+}
+nav{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+   
+}
+#containt{
+    display: flex;
+    justify-content: space-evenly;
+    width: 370px;
+    background-color: none ;
+    align-items: center;
+    height: 10px;
+    font-size: 15px;
+    padding: 1rem;
+}
+#containt a{
+    color: black;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* color: lightgray; */
+    font-weight: bold;
+}
+
+#containt h2{
+    color: rgb(69, 7, 150);
+    transition: 0.5s;
+}
+#containt h2:hover{
+    transform: scale(1.5);
+}
+ label{
+    background-color: white;
+    border-radius: 4rem;
+    border: 2px solid gray;
+    height: 20px;
+    padding: 2px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+} 
+label::after{
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: gray;
+    border-radius: 50%;
+    transition: 1s;
+}
+input{
+    height: 0;
+    width: 0;
+    visibility: none;
+}
+input:checked + label{
+    background: gray;
+    border: 2px solid rgb(167, 164, 164);
+}
+input:checked + label::after{
+    transform: translateX(150%);
+    background: white;
+    left: 50px;
+}
+input:checked + #heading{
+    background: gray;
+    color: blue;
+}
+.box{
+    height: 80vh;    
+    opacity: 0;
+    transition: all 0;
+}
+#heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#heading h1{
+    color: rgb(15, 1, 66);
+}
+ .picture{
+    height: 30vh ;
+    width: 30vh;
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    box-shadow: 1px 1px 30px rgb(69, 7, 150);
+    background-size: cover;
+    background-image: url("summer-anime-girl-pool-aesthetic-desktop-wallpaper.jpg");
+    margin-top: 20px;
+}
+#intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(69, 7, 150);
+    width: 100%;
+    color: white;
+
+}
+#intro h3, p{
+    padding: 20px;
+    padding-top: 0;
+    text-align: center;
+}
+#intro p{
+    font-weight: 600;
+}
+#intro h3{
+    font-size: 40px;
+}
+.new{
+    display: grid;
+    grid-template-columns: repeat(3,33.33%);
+    margin: -18vh 7vw 1vh 7vw;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 2px 8px gray;
+}
+.new h3{
+    color: rgb(69, 7, 150);
+}
+.inner{  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 95%; 
+    padding-top: 20px;
+}
+#logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 23%;
+}
+#logo p{
+    font-size: 20px;
+    
+    font-weight: bold;
+}
+
+ .fa-solid{
+    font-size: 30px;
+ }
+#border{
+    border: 2px solid rgb(230, 229, 229);
+    border-bottom: none;
+    border-top: none;
+}
+.enjoy h4, .design-tools h4{
+    color: rgb(69, 7, 150);
+}
+.enjoy p, .design-tools p{
+    font-size: 13px;
+}
+#works{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+}
+#works h2{
+    color: rgb(69, 7, 150);
+}
+#small{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: repeat(3,33.3%);
+    width: 80%;
+    height: 180vh;
+    grid-gap: 30px;
+}
+.devision{
+    box-shadow: 2px 3px 18px gray;
+    transform-style: preserve-3d;
+    transition: 1s;
+}   
+.devision:hover{
+    transform: rotateY(180deg);
+}
+.devision:hover .back{
+    z-index: 0;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+.hidden{
+    opacity: 0;
+    transition: all 1;
+}
+.show{
+    opacity: 1;
+    transition: all 2s;
+}
+ .front,.back{
+    height: 100%;
+    /* border: 2px solid blue; */
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+
+}
+.front{
+    background-image: url("top-view-notebooks-calculator_23-2149103982.avif");
+}
+.back{
+    transform: rotateY(180deg);
+    box-shadow: 1px 2px 10px gray;
+    z-index: -1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+} 
+.back h1{
+    padding: 50px;
+    font-family: "Cookie", cursive;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.back{
+    background: cover;
+}
+
+#first_back{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    
+    backdrop-filter: blur(100px);
+}
+#second_front{
+    background-image: url("istockphoto-1312747110-612x612.jpg");
+}
+#second_back{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+#third_front{
+    background-image: url("istockphoto-168678735-612x612.jpg");
+}
+#third_back{
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    
+}
+#forth_back{
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+}
+#forth_front{
+    background-image: url("gettyimages-460149761-612x612.jpg");
+}
+#fifth_front{
+    background-image: url("360_F_84602505_CbgZtlxEktGN0wfLfTQMuRNvBau4mujo.jpg");
+}
+#fifth_back{
+    background-color: #52ACFF;
+background-image: linear-gradient(180deg, #52ACFF 25%, #FFE32C 100%);
+
+}
+#sixth_front{
+    background-image: url("clouds-1768967_640.jpg");
+}
+#sixth_back{
+    background-color: #FBDA61;
+background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+
+}
+
+
+button{
+    height: 2.5rem;
+    width: 7rem;
+
+    border-radius: 1.5rem;
+    background-color: rgb(83, 81, 81);
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+button:hover{
+    background-color: rgb(205, 255, 23);
+    box-shadow: 1px 1px 12px white;
+}
+button:hover a{
+    color: black;
+}
+
+
+
+#conclution{
+    background-color: rgb(69, 7, 150);
+    width: 100%;
+    height: 50vh;
+    padding: 3vw;
+    margin-top: 15vh;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#links{
+    width: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+#links a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+#gmail{
+    font-size: 100px;
+}
+#conclution p{
+    text-align: center;
+}
+#conc{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 50px;
+}
+
+@media  screen and (max-width:600px)
+{
+    .box{
+        height: 60vh;    
+        transition: all 1;
+    }
+    nav{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1px;
+    }
+    #containt{
+        display: flex;
+        justify-content: space-evenly;
+        width: 70%;
+        background-color: none ;
+        align-items: center;
+        height: 90%;
+        font-size: 13px;
+    }
+    input:checked + label::after{
+        transform: translateX(100%);
+        background: white;
+        left: 50px;
+    }
+    label{
+        background-color: white;
+        border-radius: 4rem;
+        border: 2px solid gray;
+        height: 12px;
+        padding: 1px;
+        width: 24px;
+        display: flex;
+        flex-direction: column;
+        transition: 1s;
+    } 
+    label::after{
+        content: "";
+        height: 12px;
+        width: 12px;
+        background-color: gray;
+        border-radius: 50%;
+        transition: 1s;
+    }
+    /* #heading{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    } */
+    #heading h1{
+        color: rgb(15, 1, 66);
+        font-size: 1.5rem;
+    }
+     .picture{
+        height: 30vh ;
+        width: 30vh;
+        border-radius: 50%;
+        border: 3px solid lightgray;
+        box-shadow: 1px 1px 30px rgb(69, 7, 150);
+        background-size: cover;
+        background-image: url("summer-anime-girl-pool-aesthetic-desktop-wallpaper.jpg");
+        margin-top: 20px;
+    }
+    #intro{
+        height: 60vh;
+        padding-top: 20px;
+    }
+    #intro h3{
+        font-size: 25px;
+    }
+    .new{
+        display: block;
+        margin: 5vh 7vw 1vh 7vw;
+        border-radius: 15px;
+        justify-content: center;
+        padding: 7px;
+        text-align: center;
+        background-color: white;
+        box-shadow: 2px 2px 8px gray;
+        height: 200vh;
+    }
+    .inner{  
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 33.33%; 
+        padding-top: 5px;
+    }
+    #small{
+        display: grid;
+        grid-template-columns: repeat(1,100%);
+        grid-template-rows: repeat(6,15.6%);
+        width: 80%;
+        height: 250vh;
+        grid-gap: 10px;
+    }
+    .back h1{
+        font-size: 25px;
+    }
+    #conclution{
+        background-color: rgb(69, 7, 150);
+        width: 100%;
+        height: 30vh;
+        padding: 3vw;
+        margin-top: 0.01vh;
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    #conc{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+    }
+    #links a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+    }
+    #links{
+        width: 40vw;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #border{
+        border: none;
+    }
+    
+}
