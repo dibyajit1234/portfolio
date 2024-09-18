@@ -217,6 +217,7 @@ input:checked + #heading{
     box-shadow: 2px 3px 18px gray;
     transform-style: preserve-3d;
     transition: 1s;
+    border-radius: 50%;
 }   
 .devision:hover{
     transform: rotateY(180deg);
@@ -242,6 +243,7 @@ input:checked + #heading{
  .front,.back{
     height: 100%;
     /* border: 2px solid blue; */
+    border-radius: 5%;
     width: 100%;
     position: absolute;
     background-size: cover;
