@@ -28,9 +28,9 @@ darkmode.addEventListener("click",()=>{
     count++;
 
     if(count%2!=0){
-         body.style.backgroundColor='#2E3436';
+         body.style.backgroundColor='#121212';
          body.style.color='white';
-         man.style.backgroundColor="#2E3436";
+         man.style.backgroundColor="#121212";
          h1.style.color="#A800FF";
 
          h2.forEach((el)=>{
